@@ -34,7 +34,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav nav a:not(.nav-cta) { color: var(--muted); transition: color .2s; }
 .nav nav a:hover { color: var(--text); }
 .nav-cta { border: 1px solid var(--text); padding: 8px 18px; border-radius: 99px; transition: background .2s, color .2s; }
-.nav-cta:hover { background: var(--text); color: var(--bg); }
+.nav nav .nav-cta:hover { background: var(--text); color: var(--bg); }
 
 /* hero */
 .hero { position: relative; height: min(100vh, 1000px); min-height: 640px; overflow: hidden; display: flex; align-items: flex-end; padding: 0 5vw 12vh; }
@@ -76,7 +76,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .stats div { padding: 34px 5vw; border-right: 1px solid var(--line); }
 .stats div:last-child { border-right: 0; }
 .stats strong { display: block; font: 700 clamp(26px, 3vw, 40px) var(--display); }
-.stats span { color: var(--muted); font-size: 14px; }
+.stats span { display: block; color: var(--muted); font-size: 14px; line-height: 1.45; }
 
 /* sections */
 section.work, section.services, section.about, section.contact { padding: 120px 5vw; }
@@ -131,9 +131,14 @@ h2 { font: 700 clamp(34px, 5vw, 68px)/1.02 var(--display); letter-spacing: -.02e
 .about-text p { font-size: 19px; color: #cfccc5; }
 .about-text p + p { margin-top: 16px; }
 .exp { list-style: none; margin-top: 34px; border-top: 1px solid var(--line); }
-.exp li { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.exp > li { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.exp-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 18px; flex-wrap: wrap; }
 .exp strong { font-weight: 600; }
-.exp span { color: var(--muted); font-size: 15px; }
+.exp time { color: var(--muted); font-size: 14px; white-space: nowrap; }
+.exp span { display: block; margin-top: 4px; color: var(--muted); font-size: 15px; }
+.exp-steps { list-style: none; margin-top: 12px; padding-left: 14px; border-left: 2px solid var(--line); }
+.exp-steps li { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 18px; flex-wrap: wrap; padding: 4px 0; font-size: 15px; }
+.exp-steps b { font-weight: 500; }
 .about-text .tools { margin-top: 26px; font-size: 14px; color: var(--muted); letter-spacing: .04em; }
 
 /* contact */
@@ -169,5 +174,8 @@ h2 { font: 700 clamp(34px, 5vw, 68px)/1.02 var(--display); letter-spacing: -.02e
   .lb-nav { position: absolute; bottom: 3vh; }
   .lb-prev { left: 20px; } .lb-next { right: 20px; }
   section.work, section.services, section.about, section.contact { padding: 80px 5vw; }
+}
+@media (max-width: 600px) {
+  .exp-head, .exp-steps li { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
